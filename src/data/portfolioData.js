@@ -45,7 +45,7 @@ export const portfolioData = {
     {
       role: "Admin & Developer Toko",
       company: "Retail Store / Toko",
-      period: "2023 - 2024",
+      period: "2024 - 2026",
       type: "In-House",
       location: "Wonosobo, Indonesia",
       description: "Pernah menjadi admin dan developer sebuah toko dan membuatkan aplikasi di toko tersebut untuk mempermudah pencatatan stok dan efisiensi operasional.",
