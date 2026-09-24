@@ -57,7 +57,7 @@ export default function ProjectModal({ project, isOpen, onClose }) {
               alt={project.title}
               onError={(e) => {
                 e.currentTarget.onerror = null;
-                e.currentTarget.src = './assets/project-cyberdeck.jpg';
+                e.currentTarget.src = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='800' height='500' viewBox='0 0 800 500'%3E%3Crect width='100%25' height='100%25' fill='%23090e1f'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' fill='%232c67ed' font-family='monospace' font-size='18'%3E[IMAGE PREVIEW]%3C/text%3E%3C/svg%3E";
               }}
               className="w-full h-full object-cover"
             />
@@ -119,28 +119,39 @@ export default function ProjectModal({ project, isOpen, onClose }) {
           </div>
 
           {/* Modal Action Buttons */}
-          <div className="mt-8 pt-6 border-t border-slate-800 flex flex-wrap gap-4 justify-end">
-            <a
-              href={project.githubUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              onMouseEnter={() => playCyberSound('hover')}
-              className="px-5 py-2.5 rounded-xl font-heading text-xs font-bold text-slate-300 hover:text-white border border-slate-700 hover:border-[#00f0ff] bg-slate-900/60 flex items-center gap-2 transition-all"
-            >
-              <Github className="w-4 h-4" />
-              <span>SOURCE CODE</span>
-            </a>
+          <div className="mt-8 pt-6 border-t border-slate-800 flex flex-wrap gap-4 justify-end items-center">
+            {(!project.githubUrl || !project.githubUrl.trim()) && (!project.demoUrl || !project.demoUrl.trim()) && (
+              <span className="px-3.5 py-1.5 rounded-full text-xs font-mono text-slate-400 bg-slate-900 border border-slate-800 flex items-center gap-2">
+                <span className="w-2 h-2 rounded-full bg-[#00f0ff] animate-pulse" />
+                <span>LINK DEMO / REPO SEGERA DIPUBLIKASIKAN</span>
+              </span>
+            )}
 
-            <a
-              href={project.demoUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              onMouseEnter={() => playCyberSound('hover')}
-              className="px-6 py-2.5 rounded-xl font-heading text-xs font-bold text-white bg-gradient-to-r from-[#2c67ed] to-[#00f0ff] shadow-glow-blue hover:shadow-[0_0_30px_rgba(44,103,237,0.7)] flex items-center gap-2 transition-all transform hover:scale-105 active:scale-95"
-            >
-              <span>BUKA LIVE DEMO</span>
-              <ExternalLink className="w-4 h-4" />
-            </a>
+            {project.githubUrl && project.githubUrl.trim() !== '' && (
+              <a
+                href={project.githubUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                onMouseEnter={() => playCyberSound('hover')}
+                className="px-5 py-2.5 rounded-xl font-heading text-xs font-bold text-slate-300 hover:text-white border border-slate-700 hover:border-[#00f0ff] bg-slate-900/60 flex items-center gap-2 transition-all"
+              >
+                <Github className="w-4 h-4" />
+                <span>SOURCE CODE</span>
+              </a>
+            )}
+
+            {project.demoUrl && project.demoUrl.trim() !== '' && (
+              <a
+                href={project.demoUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                onMouseEnter={() => playCyberSound('hover')}
+                className="px-6 py-2.5 rounded-xl font-heading text-xs font-bold text-white bg-gradient-to-r from-[#2c67ed] to-[#00f0ff] shadow-glow-blue hover:shadow-[0_0_30px_rgba(44,103,237,0.7)] flex items-center gap-2 transition-all transform hover:scale-105 active:scale-95"
+              >
+                <span>BUKA LIVE DEMO</span>
+                <ExternalLink className="w-4 h-4" />
+              </a>
+            )}
           </div>
 
           {/* Corner Cyber Brackets */}

@@ -1,6 +1,6 @@
 import profile1Img from '../assets/profile1.png';
-import projectCyberdeckImg from '../assets/liltees-project.png';
-import projectStoreImg from '../assets/sistempakar-project.png';
+import projectLilteesImg from '../assets/liltees-project.png';
+import projectSistempakarImg from '../assets/sistempakar-project.png';
 import projectNeuropromptImg from '../assets/project-neuroprompt.jpg';
 import projectChronomagixImg from '../assets/project-chronomatrix.jpg';
 import projectQuantumpayImg from '../assets/project-quantumpay.jpg';
@@ -113,15 +113,15 @@ export const portfolioData = {
 
   projects: [
     {
-      id: "cyber-deck",
-      title: "Lil Tees — Clothing Brand Website ",
+      id: "lil-tees",
+      title: "Lil Tees — Clothing Brand Website",
       category: "Web Apps",
-      image: projectCyberdeckImg,
+      image: projectLilteesImg,
       description: "A modern and responsive website for Lil Tees, a casual clothing brand. Designed to showcase the brand's collections, story, and identity through a clean and youthful interface.",
       accent: "#2c67ed",
       tags: ["HTML", "CSS", "JavaScript", "Responsive Design", "UI/UX", "GitHub"],
-      demoUrl: " ",
-      githubUrl: " ",
+      demoUrl: "",
+      githubUrl: "",
       features: [
         "Modern responsive design",
         "Hero landing page",
@@ -130,15 +130,15 @@ export const portfolioData = {
       ]
     },
     {
-      id: "NJ-store",
+      id: "sistem-pakar",
       title: "Sistem Pakar Diagnosis Penyakit Jamur Tiram",
       category: "Web Apps",
-      image: projectStoreImg,
+      image: projectSistempakarImg,
       description: "Sistem pakar berbasis web yang dirancang untuk membantu pengguna mengidentifikasi penyakit pada tanaman jamur tiram berdasarkan gejala yang dipilih. Sistem menggunakan metode Certainty Factor (CF) untuk menghitung tingkat keyakinan terhadap hasil diagnosis.",
       accent: "#00f0ff",
       tags: ["PHP", "CSS", "JavaScript", "Sistem Pakar", "UI/UX", "Certainty Factor"],
-      demoUrl: " ",
-      githubUrl: " ",
+      demoUrl: "",
+      githubUrl: "",
       features: [
         "Diagnosis penyakit berdasarkan gejala",
         "Menampilkan hasil diagnosis dan tingkat keyakinan",
@@ -224,7 +224,7 @@ export const portfolioData = {
     availability: "Tersedia untuk Pekerjaan Full-time & Proyek Freelance",
     responseTime: "< 24 Jam",
     socials: [
-      { name: "GitHub", url: "https://https://github.com/najiehyuga", icon: "Github", handle: "@najiehyuga-NJ", color: "#2c67ed" },
+      { name: "GitHub", url: "https://github.com/najiehyuga", icon: "Github", handle: "@najiehyuga-NJ", color: "#2c67ed" },
       { name: "LinkedIn", url: "https://linkedin.com", icon: "Linkedin", handle: "As'ad Najiy", color: "#00f0ff" },
       { name: "Instagram", url: "https://instagram.com", icon: "Instagram", handle: "@njasd__", color: "#ff007f" },
       { name: "Twitter/X", url: "https://twitter.com", icon: "Twitter", handle: "@ ", color: "#a855f7" },

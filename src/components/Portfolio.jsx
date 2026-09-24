@@ -91,7 +91,7 @@ export default function Portfolio() {
                   loading="lazy"
                   onError={(e) => {
                     e.currentTarget.onerror = null;
-                    e.currentTarget.src = './assets/project-cyberdeck.jpg';
+                    e.currentTarget.src = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='800' height='500' viewBox='0 0 800 500'%3E%3Crect width='100%25' height='100%25' fill='%23090e1f'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' fill='%232c67ed' font-family='monospace' font-size='18'%3E[IMAGE PREVIEW]%3C/text%3E%3C/svg%3E";
                   }}
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                 />
@@ -152,24 +152,28 @@ export default function Portfolio() {
                     </button>
 
                     <div className="flex items-center gap-2">
-                      <a
-                        href={project.githubUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        title="GitHub Repository"
-                        className="p-2 rounded-lg border border-slate-800 hover:border-[#00f0ff] text-slate-400 hover:text-white bg-black/40 transition-colors"
-                      >
-                        <Github className="w-4 h-4" />
-                      </a>
-                      <a
-                        href={project.demoUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        title="Live Demo"
-                        className="p-2 rounded-lg border border-[#2c67ed]/50 hover:border-[#2c67ed] text-[#2c67ed] hover:text-white hover:bg-[#2c67ed] transition-all shadow-[0_0_10px_rgba(44,103,237,0.3)]"
-                      >
-                        <ExternalLink className="w-4 h-4" />
-                      </a>
+                      {project.githubUrl && project.githubUrl.trim() !== '' && (
+                        <a
+                          href={project.githubUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          title="GitHub Repository"
+                          className="p-2 rounded-lg border border-slate-800 hover:border-[#00f0ff] text-slate-400 hover:text-white bg-black/40 transition-colors"
+                        >
+                          <Github className="w-4 h-4" />
+                        </a>
+                      )}
+                      {project.demoUrl && project.demoUrl.trim() !== '' && (
+                        <a
+                          href={project.demoUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          title="Live Demo"
+                          className="p-2 rounded-lg border border-[#2c67ed]/50 hover:border-[#2c67ed] text-[#2c67ed] hover:text-white hover:bg-[#2c67ed] transition-all shadow-[0_0_10px_rgba(44,103,237,0.3)]"
+                        >
+                          <ExternalLink className="w-4 h-4" />
+                        </a>
+                      )}
                     </div>
                   </div>
                 </div>
