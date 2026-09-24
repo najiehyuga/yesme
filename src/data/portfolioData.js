@@ -1,6 +1,6 @@
 import profile1Img from '../assets/profile1.png';
-import projectCyberdeckImg from '../assets/project-cyberdeck.jpg';
-import projectStoreImg from '../assets/project-store.jpg';
+import projectCyberdeckImg from '../assets/liltees-project.png';
+import projectStoreImg from '../assets/sistempakar-project.png';
 import projectNeuropromptImg from '../assets/project-neuroprompt.jpg';
 import projectChronomagixImg from '../assets/project-chronomatrix.jpg';
 import projectQuantumpayImg from '../assets/project-quantumpay.jpg';
@@ -25,7 +25,7 @@ export const portfolioData = {
 
   stats: [
     { label: "Proyek Selesai", value: "15+", detail: "Web App & UI Production", color: "cyber-blue" },
-    { label: "Code Reliability", value: "99.9%", detail: "Optimized Performance", color: "cyber-cyan" },
+    { label: "Code Reliability", value: "86.9%", detail: "Optimized Performance", color: "cyber-cyan" },
     { label: "Teknologi Dikuasai", value: "12+", detail: "Modern Frontend & Backend", color: "cyber-pink" },
     { label: "Tahun Eksplorasi", value: "2+", detail: "Hands-on Code Experience", color: "cyber-yellow" },
   ],
@@ -39,7 +39,7 @@ export const portfolioData = {
     {
       degree: "Rekayasa Perangkat Lunak (RPL)",
       institution: "SMK Andalusia 1 Wonosobo",
-      period: "2018 - 2021",
+      period: "2016 - 2019",
     }
   ],
 
@@ -114,36 +114,36 @@ export const portfolioData = {
   projects: [
     {
       id: "cyber-deck",
-      title: "CyberDeck OS // Telemetry Dashboard",
+      title: "Lil Tees — Clothing Brand Website ",
       category: "Web Apps",
       image: projectCyberdeckImg,
-      description: "Dashboard pemantauan sistem telemetri futuristik dengan animasi data real-time, visualizer CPU/RAM, dan konsol terminal interaktif.",
+      description: "A modern and responsive website for Lil Tees, a casual clothing brand. Designed to showcase the brand's collections, story, and identity through a clean and youthful interface.",
       accent: "#2c67ed",
-      tags: ["React", "Tailwind CSS", "Framer Motion", "Web Audio"],
-      demoUrl: "https://demo.example.com/cyberdeck",
-      githubUrl: "https://github.com/example/cyberdeck-os",
+      tags: ["HTML", "CSS", "JavaScript", "Responsive Design", "UI/UX", "GitHub"],
+      demoUrl: " ",
+      githubUrl: " ",
       features: [
-        "Visualizer sistem telemetri real-time dengan status CPU & RAM",
-        "Terminal interaktif bawaan dengan perintah kustom",
-        "Suara feedback UI futuristik via Web Audio API",
-        "Dark mode cyberpunk dengan neon grid scanline"
+        "Modern responsive design",
+        "Hero landing page",
+        "Clothing collection showcase",
+        "Brand journey section"
       ]
     },
     {
       id: "NJ-store",
-      title: "NJ Cyber Store // Next-Gen E-Commerce",
-      category: "Fullstack",
+      title: "Sistem Pakar Diagnosis Penyakit Jamur Tiram",
+      category: "Web Apps",
       image: projectStoreImg,
-      description: "Platform e-commerce bertema cyberpunk dengan etalase produk neon 3D hover, filter kategori instan, cart drawer, dan simulasi checkout.",
+      description: "Sistem pakar berbasis web yang dirancang untuk membantu pengguna mengidentifikasi penyakit pada tanaman jamur tiram berdasarkan gejala yang dipilih. Sistem menggunakan metode Certainty Factor (CF) untuk menghitung tingkat keyakinan terhadap hasil diagnosis.",
       accent: "#00f0ff",
-      tags: ["React", "Tailwind CSS", "Node.js", "Zustand"],
-      demoUrl: "https://demo.example.com/NJ-store",
-      githubUrl: "https://github.com/example/NJ-cyber-store",
+      tags: ["PHP", "CSS", "JavaScript", "Sistem Pakar", "UI/UX", "Certainty Factor"],
+      demoUrl: " ",
+      githubUrl: " ",
       features: [
-        "Animasi card produk 3D tilt interaktif",
-        "State management keranjang belanja reaktif",
-        "Filter pencarian cepat dengan debounced query",
-        "Badge stok dan label neon status barang"
+        "Diagnosis penyakit berdasarkan gejala",
+        "Menampilkan hasil diagnosis dan tingkat keyakinan",
+        "Perhitungan menggunakan metode Certainty Factor",
+        "Pengelolaan basis pengetahuan"
       ]
     },
     {
