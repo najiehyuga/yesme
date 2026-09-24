@@ -10,7 +10,8 @@ export default function Portfolio() {
   const [activeTab, setActiveTab] = useState('All');
   const [selectedProject, setSelectedProject] = useState(null);
 
-  const categories = ['All', 'Web Apps', 'Fullstack', 'UI/UX & Mobile'];
+  const uniqueCategories = Array.from(new Set(projects.map((p) => p.category).filter(Boolean)));
+  const categories = ['All', ...uniqueCategories];
 
   const filteredProjects = activeTab === 'All'
     ? projects
