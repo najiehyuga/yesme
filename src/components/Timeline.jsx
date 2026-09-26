@@ -98,9 +98,11 @@ export default function Timeline() {
                             <Calendar className="w-3.5 h-3.5" />
                             {item.period}
                           </span>
-                          <span className="px-2.5 py-0.5 rounded-md bg-[#2c67ed]/20 text-[#2c67ed] text-xs font-mono font-bold border border-[#2c67ed]/30">
-                            {item.gpa}
-                          </span>
+                          {item.gpa && (
+                            <span className="px-2.5 py-0.5 rounded-md bg-[#2c67ed]/20 text-[#2c67ed] text-xs font-mono font-bold border border-[#2c67ed]/30">
+                              {item.gpa}
+                            </span>
+                          )}
                         </div>
 
                         {/* Degree & School */}
@@ -114,9 +116,25 @@ export default function Timeline() {
                         </div>
 
                         {/* Description */}
-                        <p className="mt-3 text-xs sm:text-sm text-slate-400 leading-relaxed font-sans">
-                          {item.description}
-                        </p>
+                        {item.description && (
+                          <p className="mt-3 text-xs sm:text-sm text-slate-300 leading-relaxed font-sans">
+                            {item.description}
+                          </p>
+                        )}
+
+                        {/* Education Skills/Focus */}
+                        {item.skills && (
+                          <div className="mt-4 pt-3 border-t border-slate-800/80 flex flex-wrap gap-1.5">
+                            {item.skills.map((tech, tIdx) => (
+                              <span
+                                key={tIdx}
+                                className="px-2 py-0.5 rounded text-[10px] font-mono text-slate-300 bg-black/40 border border-slate-800"
+                              >
+                                {tech}
+                              </span>
+                            ))}
+                          </div>
+                        )}
 
                         {/* Achievements List */}
                         {item.achievements && (

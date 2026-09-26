@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { ArrowRight, Terminal, Cpu, ShieldCheck, Sparkles, Download, ExternalLink, Activity } from 'lucide-react';
+import { ArrowRight, Cpu, ShieldCheck, Mail, Code2, GraduationCap, MapPin, CheckCircle2 } from 'lucide-react';
 import { portfolioData } from '../data/portfolioData';
 import { playCyberSound } from '../utils/sound';
 
 export default function Hero() {
-  const { personal } = portfolioData;
+  const { personal, stats } = portfolioData;
   const roles = personal.roles;
 
   // Typewriter effect state
@@ -66,14 +66,14 @@ export default function Hero() {
           <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-[#2c67ed]/50 bg-[#0d1428]/80 text-[#00f0ff] font-mono text-xs shadow-[0_0_15px_rgba(44,103,237,0.3)]">
             <span className="w-2 h-2 rounded-full bg-[#00ff66] animate-ping" />
             <span className="w-1.5 h-1.5 rounded-full bg-[#00ff66] -ml-2.5 mr-1" />
-            <span className="text-white/80">SYS_STATUS:</span>
+            <span className="text-white/80">STATUS:</span>
             <span className="font-semibold text-[#00ff66] tracking-wider">{personal.status}</span>
           </div>
 
           {/* Big Name with Cyberpunk Glowing Gradient & Glitch effect */}
           <div className="space-y-2">
             <p className="font-subheading text-sm md:text-base font-semibold tracking-widest text-[#00f0ff] uppercase">
-              // HELLO WORLD, INTRODUCING
+              // HALO, SAYA
             </p>
             <h1 className="font-heading text-4xl sm:text-6xl md:text-7xl font-black tracking-tight text-white uppercase leading-none">
               <span className="block text-white hover:text-[#00f0ff] transition-colors glitch-hover cursor-default">
@@ -93,15 +93,15 @@ export default function Hero() {
           </div>
 
           {/* Bio Description */}
-          <p className="text-slate-400 text-base sm:text-lg max-w-xl leading-relaxed font-sans font-normal">
+          <p className="text-slate-300 text-base sm:text-lg max-w-xl leading-relaxed font-sans font-normal">
             {personal.bio}
           </p>
 
-          {/* Cyber Badges */}
+          {/* Tech Badges */}
           <div className="flex flex-wrap gap-2.5 pt-2">
             <div className="flex items-center gap-1.5 px-3 py-1 rounded-md border border-[#2c67ed]/30 bg-[#0c1224] text-xs font-mono text-slate-300">
               <Cpu className="w-3.5 h-3.5 text-[#2c67ed]" />
-              <span>STACK: React + Tailwind + Vite</span>
+              <span>STACK: React, Tailwind, PHP, MySQL</span>
             </div>
             <div className="flex items-center gap-1.5 px-3 py-1 rounded-md border border-[#00f0ff]/30 bg-[#0c1224] text-xs font-mono text-slate-300">
               <ShieldCheck className="w-3.5 h-3.5 text-[#00f0ff]" />
@@ -129,93 +129,96 @@ export default function Hero() {
               className="px-6 py-3.5 rounded-xl font-heading text-sm font-bold text-[#00f0ff] border border-[#00f0ff]/60 hover:border-[#00f0ff] bg-[#00f0ff]/5 hover:bg-[#00f0ff]/15 hover:shadow-[0_0_25px_rgba(0,240,255,0.4)] transition-all transform hover:-translate-y-0.5 active:translate-y-0 flex items-center gap-2"
             >
               <span>HUBUNGI SAYA</span>
-              <Sparkles className="w-4 h-4 text-[#ff007f]" />
+              <Mail className="w-4 h-4 text-[#00f0ff]" />
             </button>
           </div>
         </motion.div>
 
-        {/* Right Column: Interactive 3D Cyber HUD Terminal Card */}
+        {/* Right Column: Authentic Developer Showcase Card (No fake terminal / no fake telemetry) */}
         <motion.div
-          initial={{ opacity: 0, scale: 0.9 }}
+          initial={{ opacity: 0, scale: 0.95 }}
           animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.9, delay: 0.2 }}
+          transition={{ duration: 0.8, delay: 0.2 }}
           className="lg:col-span-5 flex justify-center"
         >
           <div className="relative w-full max-w-md">
             {/* Ambient Backlight Glow */}
-            <div className="absolute -inset-1.5 bg-gradient-to-r from-[#2c67ed] via-[#00f0ff] to-[#ff007f] rounded-3xl blur-xl opacity-40 animate-pulse-slow" />
+            <div className="absolute -inset-1.5 bg-gradient-to-r from-[#2c67ed] via-[#00f0ff] to-[#ff007f] rounded-3xl blur-xl opacity-30 animate-pulse-slow" />
 
-            {/* HUD Card Container */}
-            <div className="relative rounded-2xl border border-[#2c67ed]/50 bg-[#090e1f]/90 backdrop-blur-2xl p-6 shadow-cyber-card overflow-hidden">
+            {/* Showcase Card Container */}
+            <div className="relative rounded-2xl border border-[#2c67ed]/50 bg-[#090e1f]/95 backdrop-blur-2xl p-6 shadow-cyber-card overflow-hidden">
               
-              {/* Top Card Bar */}
+              {/* Header Bar */}
               <div className="flex items-center justify-between pb-4 border-b border-slate-800">
                 <div className="flex items-center gap-2">
-                  <div className="w-3 h-3 rounded-full bg-[#ff007f] shadow-[0_0_8px_#ff007f]" />
-                  <div className="w-3 h-3 rounded-full bg-[#fcee0a] shadow-[0_0_8px_#fcee0a]" />
-                  <div className="w-3 h-3 rounded-full bg-[#00ff66] shadow-[0_0_8px_#00ff66]" />
-                  <span className="ml-2 font-mono text-xs text-slate-400">CYBER_TERMINAL.sh</span>
+                  <span className="w-2.5 h-2.5 rounded-full bg-[#00ff66] animate-pulse" />
+                  <span className="font-mono text-xs text-[#00f0ff] font-semibold tracking-wider">DEVELOPER_PROFILE // 01</span>
                 </div>
-                <div className="flex items-center gap-1.5 text-[11px] font-mono text-[#00f0ff]">
-                  <Activity className="w-3.5 h-3.5 text-[#00f0ff] animate-spin-slow" />
-                  <span>PING: 14ms</span>
+                <div className="text-[11px] font-mono text-slate-400 bg-black/40 px-2.5 py-0.5 rounded border border-slate-800">
+                  {personal.codeName}
                 </div>
               </div>
 
-              {/* Terminal Code Snippet Body */}
-              <div className="mt-4 font-mono text-xs sm:text-sm space-y-2 text-slate-300">
-                <div className="text-slate-500">// System diagnostics & developer telemetry</div>
-                <div>
-                  <span className="text-[#ff007f]">const</span>{' '}
-                  <span className="text-[#00f0ff]">developer</span> = &#123;
+              {/* Developer Avatar & Quick Info */}
+              <div className="mt-5 flex items-center gap-4">
+                <div className="relative w-20 h-20 rounded-xl overflow-hidden border-2 border-[#2c67ed] bg-[#0c1224] shrink-0 shadow-[0_0_15px_rgba(44,103,237,0.4)]">
+                  <img
+                    src={personal.avatar}
+                    alt={personal.name}
+                    className="w-full h-full object-cover object-top"
+                  />
+                  <div className="scanline" />
                 </div>
-                <div className="pl-4 space-y-1">
-                  <div>
-                    <span className="text-slate-400">name:</span>{' '}
-                    <span className="text-[#fcee0a]">"{personal.name}"</span>,
+                <div className="space-y-1">
+                  <h3 className="font-heading text-lg font-bold text-white leading-tight">
+                    {personal.name}
+                  </h3>
+                  <p className="font-mono text-xs text-[#00f0ff]">
+                    Junior Web Developer
+                  </p>
+                  <div className="flex items-center gap-1.5 text-xs text-slate-400">
+                    <MapPin className="w-3.5 h-3.5 text-[#ff007f]" />
+                    <span>Wonosobo, Jawa Tengah</span>
                   </div>
-                  <div>
-                    <span className="text-slate-400">role:</span>{' '}
-                    <span className="text-[#00ff66]">"Junior Developer"</span>,
-                  </div>
-                  <div>
-                    <span className="text-slate-400">focus:</span>{' '}
-                    <span className="text-[#2c67ed]">["React", "Tailwind", "Next.js"]</span>,
-                  </div>
-                  <div>
-                    <span className="text-slate-400">coffee:</span>{' '}
-                    <span className="text-[#ff007f]">true</span>,
-                  </div>
-                  <div>
-                    <span className="text-slate-400">passion:</span>{' '}
-                    <span className="text-[#00f0ff]">"Infinity // 100%"</span>
-                  </div>
-                </div>
-                <div>&#125;;</div>
-                <div className="pt-2 text-[#00ff66] flex items-center gap-2">
-                  <span>&gt; execute(createSuperbWebsites());</span>
                 </div>
               </div>
 
-              {/* Telemetry Meter Gauges */}
-              <div className="mt-6 pt-4 border-t border-slate-800/80 grid grid-cols-3 gap-3 text-center">
-                <div className="p-2 rounded-lg bg-black/40 border border-[#2c67ed]/30">
-                  <div className="font-heading text-lg font-bold text-[#2c67ed]">100%</div>
-                  <div className="text-[10px] font-mono text-slate-400">COMMITMENT</div>
+              {/* Verified Key Highlights */}
+              <div className="mt-5 pt-4 border-t border-slate-800/80 space-y-2.5">
+                <div className="text-[11px] font-mono text-slate-400 uppercase tracking-wider">
+                  FOKUS & KREDENSIAL:
                 </div>
-                <div className="p-2 rounded-lg bg-black/40 border border-[#00f0ff]/30">
-                  <div className="font-heading text-lg font-bold text-[#00f0ff]">60 FPS</div>
-                  <div className="text-[10px] font-mono text-slate-400">SMOOTH UI</div>
+                <div className="flex items-start gap-2 text-xs text-slate-300">
+                  <GraduationCap className="w-4 h-4 text-[#00f0ff] shrink-0 mt-0.5" />
+                  <span>S1 Teknik Informatika (UNSIQ Wonosobo)</span>
                 </div>
-                <div className="p-2 rounded-lg bg-black/40 border border-[#ff007f]/30">
-                  <div className="font-heading text-lg font-bold text-[#ff007f]">A+</div>
-                  <div className="text-[10px] font-mono text-slate-400">CODE CLEAN</div>
+                <div className="flex items-start gap-2 text-xs text-slate-300">
+                  <CheckCircle2 className="w-4 h-4 text-[#00ff66] shrink-0 mt-0.5" />
+                  <span>Pengalaman Dev & Admin Toko Retail (2+ Tahun)</span>
+                </div>
+                <div className="flex items-start gap-2 text-xs text-slate-300">
+                  <Code2 className="w-4 h-4 text-[#2c67ed] shrink-0 mt-0.5" />
+                  <span>4 Proyek Web Riil (React, PHP & MySQL)</span>
+                </div>
+              </div>
+
+              {/* Tech Stack Chips */}
+              <div className="mt-5 pt-4 border-t border-slate-800/80">
+                <div className="flex flex-wrap gap-1.5">
+                  {['React.js', 'Tailwind CSS', 'PHP', 'MySQL', 'JavaScript', 'Git'].map((item) => (
+                    <span
+                      key={item}
+                      className="px-2.5 py-1 rounded-md text-[11px] font-mono text-slate-200 bg-black/50 border border-slate-800"
+                    >
+                      {item}
+                    </span>
+                  ))}
                 </div>
               </div>
 
               {/* Corner Tech Decorative Accents */}
-              <div className="absolute top-0 right-0 w-8 h-8 border-t-2 border-r-2 border-[#00f0ff] pointer-events-none" />
-              <div className="absolute bottom-0 left-0 w-8 h-8 border-b-2 border-l-2 border-[#ff007f] pointer-events-none" />
+              <div className="absolute top-0 right-0 w-6 h-6 border-t-2 border-r-2 border-[#00f0ff] pointer-events-none" />
+              <div className="absolute bottom-0 left-0 w-6 h-6 border-b-2 border-l-2 border-[#ff007f] pointer-events-none" />
             </div>
           </div>
         </motion.div>

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Send, Mail, MapPin, Clock, Copy, Check, Terminal, Sparkles, MessageSquare, Github, Linkedin, Instagram, Twitter } from 'lucide-react';
+import { Send, Mail, MapPin, Clock, Copy, Check, Terminal, Radio, MessageSquare, Github, Linkedin, Instagram, Twitter } from 'lucide-react';
 import { portfolioData } from '../data/portfolioData';
 import { playCyberSound } from '../utils/sound';
 
@@ -46,7 +46,7 @@ export default function Contact() {
     setErrorMessage('');
 
     // Pre-calculate direct mailto fallback
-    const subject = encodeURIComponent(`[CYBER TRANSMISSION] ${formData.category} dari ${formData.name}`);
+    const subject = encodeURIComponent(`[PESAN PORTFOLIO] ${formData.category} dari ${formData.name}`);
     const body = encodeURIComponent(
       `Halo As'ad Najiy,\n\n` +
       `Nama: ${formData.name}\n` +
@@ -83,7 +83,7 @@ export default function Contact() {
           message: '',
         });
       } else {
-        throw new Error(data.message || 'Gagal mengirim sinyal transmisi.');
+        throw new Error(data.message || 'Gagal mengirim pesan.');
       }
     } catch (err) {
       // In case server is offline or pure client-side, enable direct email client fallback
@@ -110,13 +110,13 @@ export default function Contact() {
       <div className="flex flex-col items-center text-center mb-16">
         <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full border border-[#2c67ed]/40 bg-[#0b1124] text-xs font-mono text-[#00f0ff] mb-3 shadow-[0_0_12px_rgba(44,103,237,0.3)]">
           <Terminal className="w-3.5 h-3.5 text-[#2c67ed]" />
-          <span>COMMS_UPLINK // GET_IN_TOUCH</span>
+          <span>KONTAK // HUBUNGI_SAYA</span>
         </div>
         <h2 className="font-heading text-3xl sm:text-4xl md:text-5xl font-black uppercase text-white tracking-wide">
           HUBUNGI <span className="text-[#2c67ed] text-glow-blue">SAYA</span>
         </h2>
         <div className="w-24 h-1 bg-gradient-to-r from-transparent via-[#2c67ed] to-transparent mt-3" />
-        <p className="mt-4 text-slate-400 max-w-2xl font-sans text-sm sm:text-base">
+        <p className="mt-4 text-slate-300 max-w-2xl font-sans text-sm sm:text-base">
           Tertarik untuk mendiskusikan peluang kerja, proyek kolaborasi baru, atau sekadar bertukar pikiran seputar teknologi web? Mari terhubung!
         </p>
       </div>
@@ -128,8 +128,8 @@ export default function Contact() {
           {/* Quick Connect Cards */}
           <div className="p-6 rounded-3xl border border-[#2c67ed]/40 bg-[#090e1f]/90 backdrop-blur-xl shadow-cyber-card space-y-5">
             <h3 className="font-heading text-lg font-bold text-white flex items-center gap-2">
-              <Sparkles className="w-4 h-4 text-[#00f0ff]" />
-              INFORMASI TRANSMISI
+              <Radio className="w-4 h-4 text-[#00f0ff]" />
+              INFORMASI KONTAK
             </h3>
 
             {/* Email Card with 1-Click Copy */}
@@ -223,14 +223,14 @@ export default function Contact() {
             {/* Form HUD Header */}
             <div className="flex items-center justify-between pb-6 border-b border-slate-800 mb-6">
               <div>
-                <span className="font-mono text-xs text-[#00f0ff] uppercase">// DIRECT_TRANSMISSION</span>
+                <span className="font-mono text-xs text-[#00f0ff] uppercase">// DIRECT_MESSAGE</span>
                 <h3 className="font-heading text-xl sm:text-2xl font-bold text-white">
-                  KIRIM PESAN CYBER
+                  KIRIM PESAN LANGSUNG
                 </h3>
               </div>
               <div className="flex items-center gap-1.5">
                 <span className="w-2.5 h-2.5 rounded-full bg-[#00ff66] animate-pulse" />
-                <span className="font-mono text-xs text-[#00ff66]">SECURE_256</span>
+                <span className="font-mono text-xs text-[#00ff66]">FORM_ONLINE</span>
               </div>
             </div>
 
@@ -243,10 +243,10 @@ export default function Contact() {
               >
                 <div className="flex items-center gap-2 font-bold text-white">
                   <div className="w-2.5 h-2.5 rounded-full bg-[#00ff66] animate-ping" />
-                  <span>[TRANSMISI SUKSES]: Pesan berhasil dikirim ke server & dicatat untuk developer!</span>
+                  <span>[PESAN TERKIRIM]: Pesan Anda berhasil dikirim ke server & dicatat untuk developer!</span>
                 </div>
                 <p className="text-xs text-slate-300 font-sans leading-relaxed">
-                  Tujuan transmisi: <strong className="text-[#00f0ff]">{contact.email}</strong>. Data tersimpan di terminal inbox. Anda juga dapat langsung membuka draft email di Gmail atau Email Client Anda:
+                  Tujuan pesan: <strong className="text-[#00f0ff]">{contact.email}</strong>. Anda juga dapat langsung membuka draft email di Gmail atau Email Client Anda:
                 </p>
                 <div className="pt-1 flex flex-wrap gap-2.5">
                   {lastMailtoUrl && (
@@ -275,7 +275,7 @@ export default function Contact() {
               {/* Category Selection Chips */}
               <div>
                 <label className="block text-xs font-mono text-slate-300 mb-2 uppercase">
-                  Topik / Keperluan Transmisi:
+                  Topik / Keperluan Pesan:
                 </label>
                 <div className="flex flex-wrap gap-2">
                   {categories.map((cat) => (
@@ -357,11 +357,11 @@ export default function Contact() {
                 {submitting ? (
                   <>
                     <div className="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin" />
-                    <span>MENSTRAMISIKAN SINYAL DATA...</span>
+                    <span>MENGIRIM PESAN...</span>
                   </>
                 ) : (
                   <>
-                    <span>KIRIM TRANSMISI SEKARANG</span>
+                    <span>KIRIM PESAN SEKARANG</span>
                     <Send className="w-4 h-4 text-white" />
                   </>
                 )}

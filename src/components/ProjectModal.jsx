@@ -1,14 +1,32 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { X, ExternalLink, Github, CheckCircle2, Cpu, Terminal, Sparkles } from 'lucide-react';
+import { X, ExternalLink, Github, CheckCircle2, ListChecks, Cpu, Terminal } from 'lucide-react';
 import { playCyberSound } from '../utils/sound';
 
 export default function ProjectModal({ project, isOpen, onClose }) {
+  useEffect(() => {
+    const handleKeyDown = (e) => {
+      if (e.key === 'Escape' && isOpen) {
+        playCyberSound('click');
+        onClose();
+      }
+    };
+    if (isOpen) {
+      window.addEventListener('keydown', handleKeyDown);
+    }
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [isOpen, onClose]);
+
   if (!isOpen || !project) return null;
 
   return (
     <AnimatePresence>
-      <div className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 overflow-y-auto">
+      <div
+        className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 overflow-y-auto"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="modal-project-title"
+      >
         {/* Backdrop Blur Overlay */}
         <motion.div
           initial={{ opacity: 0 }}
@@ -34,7 +52,7 @@ export default function ProjectModal({ project, isOpen, onClose }) {
             <div className="flex items-center gap-2">
               <span className="w-2.5 h-2.5 rounded-full bg-[#00ff66] animate-pulse" />
               <span className="font-mono text-xs text-[#00f0ff] uppercase tracking-wider">
-                PROJECT_SPEC // {project.category}
+                RINCIAN_PROJEK // {project.category}
               </span>
             </div>
 
@@ -44,6 +62,7 @@ export default function ProjectModal({ project, isOpen, onClose }) {
                 playCyberSound('click');
                 onClose();
               }}
+              aria-label="Tutup Detail Proyek"
               className="p-1.5 rounded-lg border border-slate-700 hover:border-[#ff007f] text-slate-400 hover:text-[#ff007f] bg-slate-900/60 transition-colors"
             >
               <X className="w-5 h-5" />
@@ -72,7 +91,7 @@ export default function ProjectModal({ project, isOpen, onClose }) {
 
           {/* Title & Description */}
           <div className="mt-6 space-y-3">
-            <h3 className="font-heading text-2xl sm:text-3xl font-bold text-white">
+            <h3 id="modal-project-title" className="font-heading text-2xl sm:text-3xl font-bold text-white">
               {project.title}
             </h3>
             <p className="text-slate-300 text-sm sm:text-base leading-relaxed font-sans">
@@ -84,7 +103,7 @@ export default function ProjectModal({ project, isOpen, onClose }) {
           {project.features && (
             <div className="mt-6 pt-5 border-t border-slate-800 space-y-3">
               <h4 className="font-heading text-sm font-bold text-[#00f0ff] flex items-center gap-2">
-                <Sparkles className="w-4 h-4 text-[#ff007f]" />
+                <ListChecks className="w-4 h-4 text-[#00f0ff]" />
                 FITUR UTAMA & ARSITEKTUR:
               </h4>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">

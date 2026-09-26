@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { User, Award, Code, CheckCircle2, Zap, Layers, Sparkles, Terminal } from 'lucide-react';
+import { User, Award, Code, CheckCircle2, Zap, Layers, Palette, Terminal } from 'lucide-react';
 import { portfolioData } from '../data/portfolioData';
 import { playCyberSound } from '../utils/sound';
 
@@ -11,7 +11,7 @@ export default function About() {
   const skillCategories = [
     { id: 'frontend', label: 'Frontend', count: skills.frontend.length },
     { id: 'backend', label: 'Backend & DB', count: skills.backend.length },
-    { id: 'tools', label: 'Tools & DevOps', count: skills.tools.length },
+    { id: 'tools', label: 'Tools & Workflow', count: skills.tools.length },
   ];
 
   return (
@@ -20,14 +20,14 @@ export default function About() {
       <div className="flex flex-col items-center text-center mb-16">
         <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full border border-[#2c67ed]/40 bg-[#0b1124] text-xs font-mono text-[#00f0ff] mb-3 shadow-[0_0_12px_rgba(44,103,237,0.3)]">
           <Terminal className="w-3.5 h-3.5 text-[#2c67ed]" />
-          <span>SYS_MODULE: ABOUT_DEVELOPER</span>
+          <span>PROFIL // TENTANG_DEVELOPER</span>
         </div>
         <h2 className="font-heading text-3xl sm:text-4xl md:text-5xl font-black uppercase text-white tracking-wide">
           TENTANG <span className="text-[#2c67ed] text-glow-blue">SAYA</span>
         </h2>
         <div className="w-24 h-1 bg-gradient-to-r from-transparent via-[#2c67ed] to-transparent mt-3" />
-        <p className="mt-4 text-slate-400 max-w-2xl font-sans text-sm sm:text-base">
-          Mengenal lebih dalam identitas pengembang, visi teknologi, keahlian teknis, dan pencapaian performa proyek.
+        <p className="mt-4 text-slate-300 max-w-2xl font-sans text-sm sm:text-base">
+          Mengenal latar belakang, prinsip kerja rekayasa web, keahlian teknis nyata, dan rekam jejak pengembangan sistem.
         </p>
       </div>
 
@@ -96,19 +96,19 @@ export default function About() {
         >
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-[#2c67ed]/15 border border-[#2c67ed]/40 text-[#2c67ed] font-mono text-xs">
             <User className="w-3.5 h-3.5" />
-            <span>DEV_PROFILE // EXECUTIVE SUMMARY</span>
+            <span>RINGKASAN_PROFIL // NAJIY</span>
           </div>
 
           <h3 className="font-heading text-2xl sm:text-3xl font-bold text-white leading-snug">
-            Membangun Pengalaman Digital Masa Depan dengan Semangat <span className="text-[#00f0ff]">Cyberpunk</span> & Ketelitian Kode
+            Membangun Pengalaman Web Fungsional dengan Sentuhan <span className="text-[#00f0ff]">Cyberpunk</span> & Ketelitian Kode
           </h3>
 
           <p className="text-slate-300 text-base leading-relaxed">
-            Halo! Saya <strong>{personal.name}</strong>, seorang developer yang bersemangat dalam menjembatani ide kreatif dengan rekayasa web mutakhir. Saya berfokus pada ekosistem JavaScript modern, khususnya <strong>React</strong> dan <strong>Tailwind CSS</strong>, untuk menciptakan website yang tidak hanya berfungsi secara presisi, tetapi juga memanjakan mata pengguna.
+            Halo! Saya <strong>{personal.name}</strong>, seorang developer yang bersemangat dalam menjembatani kebutuhan fungsional dengan antarmuka digital modern. Berpengalaman mengembangkan sistem berbasis <strong>PHP & MySQL</strong> serta aplikasi web interaktif menggunakan <strong>React</strong> dan <strong>Tailwind CSS</strong>.
           </p>
 
-          <p className="text-slate-400 text-sm sm:text-base leading-relaxed">
-            Bagi saya, setiap baris kode adalah fondasi dari sebuah pengalaman interaktif. Ketertarikan mendalam saya pada teknologi masa kini mendorong saya untuk terus belajar secara konsisten, mengeksplorasi arsitektur frontend, optimasi performa, serta prinsip UI/UX yang modern dan intuitif.
+          <p className="text-slate-300 text-sm sm:text-base leading-relaxed">
+            Setiap proyek bagi saya adalah kesempatan menghadirkan kemudahan nyata bagi pengguna, baik itu aplikasi pencatatan stok toko, sistem pakar berbasis kecerdasan buatan, maupun platform absensi digital.
           </p>
 
           {/* Quick Pillars */}
@@ -125,7 +125,7 @@ export default function About() {
 
             <div className="p-4 rounded-xl border border-slate-800 bg-[#0c1224]/80 hover:border-[#00f0ff]/60 transition-all">
               <div className="flex items-center gap-2.5 text-[#00f0ff] font-subheading font-bold text-base mb-1">
-                <Sparkles className="w-4 h-4" />
+                <Palette className="w-4 h-4" />
                 <span>Estetika & Interaktivitas</span>
               </div>
               <p className="text-xs text-slate-400">
@@ -137,11 +137,11 @@ export default function About() {
 
       </div>
 
-      {/* Project Statistics Grid (Statistik Project) */}
+      {/* Project Highlights Grid (Fakta Terverifikasi) */}
       <div className="mb-20">
         <div className="text-center mb-8">
-          <p className="font-mono text-xs text-[#ff007f] uppercase tracking-widest">// METRICS & IMPACT</p>
-          <h3 className="font-heading text-2xl font-bold text-white mt-1">STATISTIK PENCAPAIAN PROYEK</h3>
+          <p className="font-mono text-xs text-[#ff007f] uppercase tracking-widest">// REKAP_KREDENSIAL</p>
+          <h3 className="font-heading text-2xl font-bold text-white mt-1">RINGKASAN PENCAPAIAN PROYEK</h3>
         </div>
 
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">

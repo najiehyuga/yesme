@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ExternalLink, Github, Eye, Layers, Sparkles, Terminal, Code2 } from 'lucide-react';
+import { ExternalLink, Github, Eye, Layers, Terminal, Code2 } from 'lucide-react';
 import { portfolioData } from '../data/portfolioData';
 import { playCyberSound } from '../utils/sound';
 import ProjectModal from './ProjectModal';
@@ -33,14 +33,14 @@ export default function Portfolio() {
       <div className="flex flex-col items-center text-center mb-14">
         <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full border border-[#2c67ed]/40 bg-[#0b1124] text-xs font-mono text-[#00f0ff] mb-3 shadow-[0_0_12px_rgba(44,103,237,0.3)]">
           <Terminal className="w-3.5 h-3.5 text-[#2c67ed]" />
-          <span>CYBER_VAULT // SHOWCASE</span>
+          <span>PORTFOLIO // KARYA_WEB</span>
         </div>
         <h2 className="font-heading text-3xl sm:text-4xl md:text-5xl font-black uppercase text-white tracking-wide">
           PORTFOLIO <span className="text-[#2c67ed] text-glow-blue">PROYEK</span>
         </h2>
         <div className="w-24 h-1 bg-gradient-to-r from-transparent via-[#2c67ed] to-transparent mt-3" />
-        <p className="mt-4 text-slate-400 max-w-2xl font-sans text-sm sm:text-base">
-          Kumpulan aplikasi web dan antarmuka interaktif yang dibangun dengan fokus pada performa cepat, estetika visual cyberpunk, dan pengalaman pengguna yang memikat.
+        <p className="mt-4 text-slate-300 max-w-2xl font-sans text-sm sm:text-base">
+          Aplikasi web nyata yang telah dibangun dengan fokus pada kegunaan fungsional, performa stabil, dan antarmuka interaktif yang nyaman digunakan.
         </p>
       </div>
 

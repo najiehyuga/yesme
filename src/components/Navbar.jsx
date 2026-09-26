@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Volume2, VolumeX, Menu, X, Sparkles, Terminal, Code2 } from 'lucide-react';
+import { Volume2, VolumeX, Menu, X, Mail, Terminal, Code2 } from 'lucide-react';
 import { playCyberSound, toggleSound, isSoundEnabled } from '../utils/sound';
 
 export default function Navbar() {
@@ -117,7 +117,7 @@ export default function Navbar() {
             })}
           </div>
 
-          {/* Right Action: Sound Toggle + Hire Me CTA Button */}
+          {/* Right Action: Sound Toggle + Contact CTA Button */}
           <div className="flex items-center gap-2">
             {/* Audio Synth Sound Toggle */}
             <button
@@ -138,8 +138,8 @@ export default function Navbar() {
               onMouseEnter={() => playCyberSound('hover')}
               className="hidden sm:inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full font-heading text-xs font-bold text-white bg-gradient-to-r from-[#2c67ed] to-[#5487ff] hover:from-[#3573fa] hover:to-[#6ba0ff] shadow-[0_0_15px_rgba(44,103,237,0.6)] hover:shadow-[0_0_20px_rgba(44,103,237,0.9)] transition-all transform hover:scale-105 active:scale-95"
             >
-              <Sparkles className="w-3.5 h-3.5 text-[#00f0ff]" />
-              <span>HIRE ME</span>
+              <Mail className="w-3.5 h-3.5 text-[#00f0ff]" />
+              <span>KONTAK</span>
             </button>
 
             {/* Mobile Menu Button */}
@@ -149,7 +149,8 @@ export default function Navbar() {
                 setMobileMenuOpen(!mobileMenuOpen);
               }}
               className="md:hidden p-2 rounded-lg border border-[#2c67ed]/40 text-slate-200 hover:text-white bg-slate-900/80"
-              aria-label="Toggle Navigation Menu"
+              aria-label="Buka Menu Navigasi"
+              aria-expanded={mobileMenuOpen}
             >
               {mobileMenuOpen ? <X className="w-5 h-5 text-[#ff007f]" /> : <Menu className="w-5 h-5 text-[#00f0ff]" />}
             </button>

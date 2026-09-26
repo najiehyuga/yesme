@@ -1,5 +1,5 @@
 import React from 'react';
-import { ArrowUp, Terminal, Shield, Heart, Sparkles } from 'lucide-react';
+import { ArrowUp, Terminal, Shield, Heart } from 'lucide-react';
 import { playCyberSound } from '../utils/sound';
 import { portfolioData } from '../data/portfolioData';
 
@@ -30,18 +30,18 @@ export default function Footer() {
                 CYBERPUNK_BUILD_v2.0
               </span>
             </div>
-            <p className="text-slate-500 text-[11px] text-center md:text-left">
-              Crafted with React, Tailwind CSS, Framer Motion & Cyberpunk Neon Aesthetics.
+            <p className="text-slate-400 text-[11px] text-center md:text-left">
+              Dibangun dengan React, Tailwind CSS, Framer Motion & Estetika Cyberpunk.
             </p>
           </div>
 
-          {/* Center Telemetry Diagnostic */}
-          <div className="hidden lg:flex items-center gap-4 text-[11px] text-slate-500">
+          {/* Center Status Diagnostic */}
+          <div className="hidden lg:flex items-center gap-4 text-[11px] text-slate-400">
             <div>NODE: <span className="text-slate-300">WSB-ID-01</span></div>
             <div>•</div>
-            <div>STATUS: <span className="text-[#00ff66]">HEALTHY // 99.9%</span></div>
+            <div>STATUS: <span className="text-[#00ff66]">ACTIVE // READY</span></div>
             <div>•</div>
-            <div>SECURITY: <span className="text-[#00f0ff]">ENCRYPTED</span></div>
+            <div>SYSTEM: <span className="text-[#00f0ff]">ONLINE</span></div>
           </div>
 
           {/* Right: Back to Top Button */}
